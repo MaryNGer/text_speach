@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    kit result
+{% endblock %}
+
+
+{% block li %}
+    <div class="get_text" data-simplebar>{{text}}</div>
+{% endblock %}
+
+{% block button %}
+    <div class="block_btn">
+        <button id="playSpeechButton" class="btn-reset btn btn_up btn-index-result flex" data-result="result1">
+            Воспроизвести
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_6_289" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                    <rect width="24" height="24" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_6_289)">
+                    <path d="M8 19V5L19 12L8 19ZM10 15.35L15.25 12L10 8.65V15.35Z"/>
+                </g>
+            </svg>
+        </button>
+        <button id="downloadSpeechButton" class="btn-reset btn btn_down btn-index-result-down flex">
+            Скачать
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_6_293" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                    <rect width="24" height="24" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_6_293)">
+                    <path d="M12 16L7 11L8.4 9.55L11 12.15V4H13V12.15L15.6 9.55L17 11L12 16ZM6 20C5.45 20 4.97917 19.8042 4.5875 19.4125C4.19583 19.0208 4 18.55 4 18V15H6V18H18V15H20V18C20 18.55 19.8042 19.0208 19.4125 19.4125C19.0208 19.8042 18.55 20 18 20H6Z"/>
+                </g>
+            </svg>
+        </button>
+    </div>
+{% endblock %}
+
+
+{% block li_down %}
+    <div class="items_block_file">
+        <div class="file_div flex">
+            <p class=" form-descr form-descr-result flex">
+                Готовый файл
+            </p>
+        </div>
+    </div>
+    <div class="block-simulator-btn block_btn">
+        <button id="playAudioButton" class="btn-reset btn btn_up btn-res btn-index-result flex" data-result="result2">
+            Воспроизвести
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_6_289" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                    <rect width="24" height="24" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_6_289)">
+                    <path d="M8 19V5L19 12L8 19ZM10 15.35L15.25 12L10 8.65V15.35Z"/>
+                </g>
+            </svg>
+        </button>
+        <p class="sim-descr sim-descr-down flex">
+            Скачать
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_6_293" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                    <rect width="24" height="24" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_6_293)">
+                    <path d="M12 16L7 11L8.4 9.55L11 12.15V4H13V12.15L15.6 9.55L17 11L12 16ZM6 20C5.45 20 4.97917 19.8042 4.5875 19.4125C4.19583 19.0208 4 18.55 4 18V15H6V18H18V15H20V18C20 18.55 19.8042 19.0208 19.4125 19.4125C19.0208 19.8042 18.55 20 18 20H6Z"/>
+                </g>
+            </svg>
+        </p>
+    </div>
+
+{% endblock %}
+
+
+
+{% block li_down_result %}
+    <p class="get_text text_down" data-simplebar>{{ result_text }}</p>
+
+
+{% endblock %}
+
+{% block script %}
+    <script>
+        document.querySelectorAll('.btn_up, .btn-res').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var result = btn.getAttribute('data-result');
+
+                if (result === 'result1') {
+                  var audio = new Audio('{{ result }}');
+                }
+                else if (result === 'result2') {
+                  var audio = new Audio('{{ result_file }}');
+            }
+
+                if (audio) {
+                    audio.play();
+                }
+            });
+        });
+    </script>
+
+    <script>
+        document.querySelector('.btn_down').addEventListener('click', function() {
+            if ('{{ result }}' !== undefined && '{{ result }}' !== '') {
+                var link = document.createElement('a');
+                link.href = '{{ result }}';
+                link.setAttribute('download', 'file.mp3');
+                link.click();
+            }
+        });
+    </script>
+{% endblock %}
+

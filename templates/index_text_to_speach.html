@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    kit speach
+{% endblock %}
+
+{% block li %}
+    <form class="form_text" method="POST">
+        <textarea class="form_text_area castom-scroll-text" name="text" placeholder="Введите текст"></textarea>
+        <button class="btn-reset btn_item flex" type="submit">
+            Преобразовать
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_6_206" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                    <rect width="24" height="24" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_6_206)">
+                    <path d="M9 19V17H11C10.75 14.7 9.76667 12.7917 8.05 11.275C6.33333 9.75833 4.31667 9 2 9V7C4.15 7 6.125 7.56667 7.925 8.7C9.725 9.83333 11.0833 11.3667 12 13.3C12.6333 11.95 13.4667 10.7542 14.5 9.7125C15.5333 8.67083 16.6917 7.76667 17.975 7H14V5H21V12H19V8.7C17.45 9.65 16.1167 10.825 15 12.225C13.8833 13.625 13.2167 15.2167 13 17H15V19H9Z" fill="#F3F4F5"/>
+                </g>
+            </svg>
+        </button>
+    </form>
+{% endblock %}
+
+{% block button %}
+    <div class="block-simulator-btn">
+        <p class=" sim-descr sim-descr-up flex">
+            Воспроизвести
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_6_289" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                    <rect width="24" height="24" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_6_289)">
+                    <path d="M8 19V5L19 12L8 19ZM10 15.35L15.25 12L10 8.65V15.35Z" fill="#211B24" />
+                </g>
+            </svg>
+        </p>
+        <p class=" sim-descr sim-descr-down flex">
+            Скачать
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_6_293" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                    <rect width="24" height="24" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_6_293)">
+                    <path d="M12 16L7 11L8.4 9.55L11 12.15V4H13V12.15L15.6 9.55L17 11L12 16ZM6 20C5.45 20 4.97917 19.8042 4.5875 19.4125C4.19583 19.0208 4 18.55 4 18V15H6V18H18V15H20V18C20 18.55 19.8042 19.0208 19.4125 19.4125C19.0208 19.8042 18.55 20 18 20H6Z"/>
+                </g>
+            </svg>
+        </p>
+    </div>
+{% endblock %}
+
+{% block li_down %}
+    <div class="items_block_file">
+        <div class="file_div flex">
+            <form action="/" enctype="multipart/form-data" class="form-file" method="POST">
+                <p class=" form-descr flex">
+                    Загрузить файл
+                </p>
+                <input id="fileInput" class="form-input" type="file" name="file" accept=".mp3">
+                <button class="btn-reset btn_item form-button flex" type="submit">
+                    Преобразовать
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_6_206" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                            <rect width="24" height="24" fill="#D9D9D9"/>
+                        </mask>
+                        <g mask="url(#mask0_6_206)">
+                            <path d="M9 19V17H11C10.75 14.7 9.76667 12.7917 8.05 11.275C6.33333 9.75833 4.31667 9 2 9V7C4.15 7 6.125 7.56667 7.925 8.7C9.725 9.83333 11.0833 11.3667 12 13.3C12.6333 11.95 13.4667 10.7542 14.5 9.7125C15.5333 8.67083 16.6917 7.76667 17.975 7H14V5H21V12H19V8.7C17.45 9.65 16.1167 10.825 15 12.225C13.8833 13.625 13.2167 15.2167 13 17H15V19H9Z" fill="#F3F4F5"/>
+                        </g>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="block_btn">
+        <button class="btn-reset btn btn_up btn-index-result flex btn-play">
+            Воспроизвести
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_6_289" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                    <rect width="24" height="24" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_6_289)">
+                    <path d="M8 19V5L19 12L8 19ZM10 15.35L15.25 12L10 8.65V15.35Z"/>
+                </g>
+            </svg>
+        </button>
+        <button id="uploadButton" class="btn-reset btn btn_down btn-index-result-down flex">
+            Загрузить
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_6_293" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                    <rect width="24" height="24" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_6_293)">
+                    <path d="M12 16L7 11L8.4 9.55L11 12.15V4H13V12.15L15.6 9.55L17 11L12 16ZM6 20C5.45 20 4.97917 19.8042 4.5875 19.4125C4.19583 19.0208 4 18.55 4 18V15H6V18H18V15H20V18C20 18.55 19.8042 19.0208 19.4125 19.4125C19.0208 19.8042 18.55 20 18 20H6Z"/>
+                </g>
+            </svg>
+        </button>
+    </div>
+
+{% endblock %}
+
+{% block li_down_result %}
+    <p data-simplebar id="fileName" class="get_text text_down"></p>
+{% endblock %}
+
+{% block script_upload %}
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const uploadButton = document.getElementById('uploadButton');
+        const fileNameElement = document.getElementById('fileName');
+
+        uploadButton.addEventListener('click', function() {
+        fileInput.click();
+        });
+        fileInput.addEventListener('change', function() {
+        const file = fileInput.files[0];
+        fileNameElement.textContent = 'Выбранный файл: ' + file.name;
+        });
+
+    </script>
+    <script>
+        document.querySelector('.btn-play').addEventListener('click', function() {
+        var fileInput = document.getElementById('fileInput');
+        var file = fileInput.files[0];
+        var fileNameElement = document.getElementById('fileName');
+
+        if (file) {
+            fileNameElement.style.color = '#0db58b';
+            var audio = new Audio(URL.createObjectURL(file));
+            audio.play();
+
+        } else {
+            fileNameElement.textContent = 'Выберите аудиофайл для воспроизведения';
+            fileNameElement.style.color = 'red';
+        }
+        });
+    </script>
+{% endblock %}
