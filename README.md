@@ -21,6 +21,3 @@ WEB - приложение для преобразования текста в �
 - библиотека gtts
 
 ![MacBook Air - 3](https://github.com/user-attachments/assets/5d7642d2-6e4f-4c8b-9b5d-4553837983df)
-
-
-[@SAY_2744](https://t.me/SAY_2744)
